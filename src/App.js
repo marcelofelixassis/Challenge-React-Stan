@@ -8,14 +8,49 @@ class App extends Component {
     return (
       <div className="App">
        <Header />
-       {/* <Subheader /> */}
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p> */}
+        <div className="grid" style={{marginTop: '35px'}}>
+        <div className="content__grid">
+          <div  style={{position: 'relative', float: 'left', padding: '0px 10px 0px 0px'}}>
+            <img  src={logo} alt="" height="250px" width="155px" style={{backgroundColor: '#1e1e1e'}}/>
+          </div>
+
+          <div  style={{position: 'relative', float: 'left', padding: '0px 10px 0px 0px'}}>
+            <img  src={logo} alt="" height="250px" width="155px" style={{backgroundColor: '#1e1e1e'}}/>
+          </div>
+
+          <div  style={{position: 'relative', float: 'left', padding: '0px 10px 0px 0px'}}>
+            <img  src={logo} alt="" height="250px" width="155px" style={{backgroundColor: '#1e1e1e'}}/>
+          </div>  
+
+          <div  style={{position: 'relative', float: 'left', padding: '0px 10px 0px 0px'}}>
+            <img  src={logo} alt="" height="250px" width="155px" style={{backgroundColor: '#1e1e1e'}}/>
+          </div>
+
+          <div  style={{position: 'relative', float: 'left', padding: '0px 10px 0px 0px'}}>
+            <img  src={logo} alt="" height="250px" width="155px" style={{backgroundColor: '#1e1e1e'}}/>
+          </div>
+
+          <div  style={{position: 'relative', float: 'left', padding: '0px 10px 0px 0px'}}>
+            <img  src={logo} alt="" height="250px" width="155px" style={{backgroundColor: '#1e1e1e'}}/>
+          </div>
+
+          <div  style={{position: 'relative', float: 'left', padding: '0px 10px 0px 0px'}}>
+            <img  src={logo} alt="" height="250px" width="155px" style={{backgroundColor: '#1e1e1e'}}/>
+          </div>
+
+          <div  style={{position: 'relative', float: 'left', padding: '0px 10px 0px 0px'}}>
+            <img  src={logo} alt="" height="250px" width="155px" style={{backgroundColor: '#1e1e1e'}}/>
+          </div>
+        </div>
+        
+
+       
+       
+       </div>
+
+       
+      
+     
       </div>
     );
   }
