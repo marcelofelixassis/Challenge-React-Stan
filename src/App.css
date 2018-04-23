@@ -1,12 +1,17 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
   font-family: Verdana, sans-serif;
+  height: 100%;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+}
+
+.App {
+  min-height: 80%;
 }
 
 .content__grid {
@@ -84,4 +89,9 @@ div #subtitle {
   left: 14px;
   font-size: 28px;
   color: #fff;
+}
+
+footer {
+  height: 200px;
+  background: red;
 }
