@@ -2,46 +2,28 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/header/Header.jsx';
 import Movie from './components/movie/Movie.jsx';
-import logo from './logo.svg';
+import Footer from './components/footer/Footer.jsx';
+import ReactResizeDetector from 'react-resize-detector';
 
 class App extends Component {
+
+  onResize = () => {
+    var header  = document.querySelector(".content__header");
+    var body = document.querySelector("#content__movies");
+    var footer = document.querySelector("#content__footer");
+    var windowH = window.innerHeight;
+
+    if (footer.offsetTop < windowH - footer.offsetHeight) {
+      body.style.marginBottom = (windowH - header.offsetHeight - body.offsetHeight - footer.offsetHeight - 35) + "px";
+    }else {
+      body.style.marginBottom = "20px";
+    }
+  }
+
   render() {
-
-    window.onload = function() {
-      var topo  = document.querySelector(".content__header");
-      var conteudo = document.querySelector("#content__movies");
-      var rodape = document.querySelector(".content__footer");
-      var tamanhoTela = window.innerHeight;
-
-      if (rodape.offsetTop < tamanhoTela - rodape.offsetHeight) {
-        conteudo.style.marginBottom = (tamanhoTela - topo.offsetHeight - conteudo.offsetHeight - rodape.offsetHeight - 35) + "px";
-      } else {
-        conteudo.style.marginBottom = "20px";
-      }
-    }
-
-    window.onresize = function() {
-      var topo  = document.querySelector(".content__header");
-      var conteudo = document.querySelector("#content__movies");
-      var rodape = document.querySelector(".content__footer");
-      var tamanhoTela = window.innerHeight;
-
-
-      console.log(tamanhoTela);
-      console.log(tamanhoTela);
-      console.log(tamanhoTela);
-      console.log(tamanhoTela);
-      
-      if (rodape.offsetTop < tamanhoTela - rodape.offsetHeight) {
-        conteudo.style.marginBottom = (tamanhoTela - topo.offsetHeight - conteudo.offsetHeight - rodape.offsetHeight - 35) + "px";
-      } else {
-        conteudo.style.marginBottom = "20px";
-      }
-    }
- 
     return (
-      <div>
       <div className="App">
+        <ReactResizeDetector handleWidth onResize={this.onResize} />
         <Header />
         <div className="grid" id="content__movies">
           <div className="content__grid">
@@ -52,10 +34,8 @@ class App extends Component {
             <Movie type="SERIES" sub_text="Popular Series"/>
           </div>
         </div>
-        
+        <Footer />
       </div>  
-      <footer className="content__footer">asdfasdf</footer>  
-      </div>
     );
   }
 }

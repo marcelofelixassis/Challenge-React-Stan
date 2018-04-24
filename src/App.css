@@ -48,6 +48,10 @@ div #subtitle {
   font-size: 20px;
 }
 
+div #subtext {
+  font-size: 12px;
+}
+
 #login_btn__header {
   /* float: right;  ADD WHEN BUILDING RESPONSIVE LAYOUT*/
   padding: 10px 0px 0px 0px;
@@ -71,6 +75,7 @@ div #subtitle {
 
 #content__movies {
   margin-top: 35px;
+  padding-bottom: 120px;
 }
 
 .movie {
@@ -91,7 +96,55 @@ div #subtitle {
   color: #fff;
 }
 
-footer {
-  height: 200px;
-  background: red;
+#content__footer {
+  background-color: #1e1e1e;
+  padding: 50px 0px 50px 0px;
+}
+
+.footer__links {
+  display:inline-block;
+  text-decoration:none;
+  color: rgb(208, 208, 208);
+  padding-right: 10px;
+}
+
+#footer__copyright {
+  margin-top: 20px;
+  color: rgb(172, 171, 171, 0.7);
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+#footer__social {
+  float: left;
+  margin-top: 75px;
+}
+
+.social {
+  padding-right: 20px;
+}
+
+#footer_platforms {
+  margin-top: 70px;
+  float: right;
+}
+
+@media screen and (min-width: 600px) {
+  div #title {
+    float: left;
+    padding: 7px 0px 0px 0px;
+  }
+
+  #login_btn__header {
+    float: right;
+    padding: 12px 0px 0px 0px;
+  }
+
+  div #subtitle {   
+    padding: 10px 0px 0px 0px;
+  }
+
+  .header {
+    height: 45px;
+  }
 }
