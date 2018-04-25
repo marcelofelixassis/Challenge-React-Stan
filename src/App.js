@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/header/Header.jsx';
-import Movie from './components/movie/Movie.jsx';
+
 import Footer from './components/footer/Footer.jsx';
 import ReactResizeDetector from 'react-resize-detector';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+
+import HomePage from './pages/HomePage.jsx';
+import MoviesPage from './pages/MoviesPage.jsx';
+import SeriesPage from './pages/SeriesPage.jsx';
+
 
 class App extends Component {
-
   onResize = () => {
     var header  = document.querySelector(".content__header");
     var body = document.querySelector("#content__movies");
@@ -22,20 +27,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <ReactResizeDetector handleWidth onResize={this.onResize} />
-        <Header />
-        <div className="grid" id="content__movies">
-          <div className="content__grid">
-            <Movie type="SERIES" sub_text="Popular Series"/>
-            <Movie type="MOVIES" sub_text="Popular Movies"/>
-            <Movie type="SERIES" sub_text="Popular Series"/>
-            <Movie type="MOVIES" sub_text="Popular Movies"/>
-            <Movie type="SERIES" sub_text="Popular Series"/>
+      <Router>
+        <div className="App">
+          <ReactResizeDetector handleWidth onResize={this.onResize} />
+          <Header />
+          <div className="grid" id="content__movies">
+            <div className="content__grid">
+              <Route exact path='/' component={HomePage} />
+              <Route exact path='/MoviesPage' component={MoviesPage} />
+              <Route exact path='/SeriesPage' component={SeriesPage} />
+            </div>
           </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>  
+      </Router>  
     );
   }
 }
